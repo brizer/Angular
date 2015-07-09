@@ -1,0 +1,13 @@
+<!--ng-show返回true时该div显示-->
+<div ng-show="product.images.length">
+  <div class="img-wrap">
+  	<!--应用图片-->
+    <img ng-src="{{product.images[gallery.current]}}" />
+  </div>
+  <ul class="img-thumbnails clearfix">
+  												<!--遍历小图-->
+    <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+      <img ng-src="{{image}}" />
+    </li>
+  </ul>
+</div>

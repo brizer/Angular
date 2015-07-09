@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+  <head>
+  	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.4.0-beta.4/angular.min.js"></script>
+    <script type="text/javascript" src="products.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+
+  <body ng-controller="StoreController as store">
+  	<!--该区间和app.js中的StoreController控制器交互-->
+    <!--头部-->
+    <header>
+      <h1 class="text-center">Flatlander Crafted Gems</h1>
+      <h2 class="text-center">– an Angular store –</h2>
+    </header>
+
+
+    <div class="list-group">
+      <!-- 产品内容-->
+      							    <!-- 遍历store.products中的数据-->
+      <div class="list-group-item" ng-repeat="product in store.products">
+      	<!--相应变量双向绑定-->                        <!--利用过滤器控制货币格式-->
+        <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+
+        <!-- 应用products.js中对应指令器productGallery  -->
+        <product-gallery></product-gallery>
+
+        <!-- 应用products.js中对应指令器productTabs  -->
+        <product-tabs></product-tabs>
+      </div>
+
+    </div>
+  </body>
+</html>
