@@ -23,7 +23,8 @@
       <div class="list-group-item" ng-repeat="product in store.products">
       	<!--相应变量双向绑定-->                        <!--利用过滤器控制货币格式-->
         <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
-
+        <!--使用ng-click触发脏检测-->  
+        <button class="btn btn-primary" ng-click="product.price=product.price+1">添加1</button>
         <!-- 应用products.js中对应指令器productGallery  -->
         <product-gallery></product-gallery>
 
